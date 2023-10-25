@@ -11,3 +11,7 @@ Este projeto teve início por volta do ano de 2011, o objetivo era agregar um gr
 ### Observação
 
 No momento o projeto está desatualizado. 
+
+### Visualizar projeto
+
+- <a href="https://everaldo-martins.github.io/velozeasy/" target="_blank">Veloz Easy</a>
