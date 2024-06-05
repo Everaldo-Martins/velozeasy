@@ -42,7 +42,7 @@ body{
 .redes .plus,
 .redes .twitter,
 main .menu-large a {
-    background-image: url('../img/back_img.webp');
+    background-image: url('../images/back_img.webp');
     background-repeat: no-repeat;
 }
 
@@ -167,7 +167,7 @@ header .nav > li > span {
     height: fit-content;            
     display: block;
     padding: 1.3rem 2rem 1.3rem .8rem;
-    background: url('../img/seta.svg');
+    background: url('../images/seta.svg');
     background-repeat:no-repeat;
     background-position: 90% -220px;
     font-family: 'Poppins', sans-serif;
@@ -452,13 +452,13 @@ main .menu-large .b7{
     background-position:-613px -127px
 }
 main .menu-large .b8{
-    background-position:-145px -260px
-}
-main .menu-large .b9{
     background-position:-376px -257px
 }
-main .menu-large .b10{
+main .menu-large .b9{
     background-position:-456px -257px
+}
+main .menu-large .b10{
+    background-position:-145px -260px
 }
 main .menu-large .b11{
     background-position:14px -258px
@@ -522,15 +522,15 @@ main .radios .radio1, main .radios .radio2, main .radios .radio3 {
     overflow: hidden;
 }
 main .radio1{
-    background: rgba(68, 87, 95, 0.8) url('../img/soforro.png') no-repeat center;
+    background: rgba(68, 87, 95, 0.8) url('../images/soforro.png') no-repeat center;
     background-size: 60%;
 }
 main .radio2{
-    background: rgba(68, 87, 95, 0.8) url('../img/rst.png') no-repeat center;
+    background: rgba(68, 87, 95, 0.8) url('../images/rst.png') no-repeat center;
     background-size:100%;
 }
 main .radio3{
-    background: rgba(68, 87, 95, 0.8) url('../img/sertaneja.png') no-repeat center 50px;
+    background: rgba(68, 87, 95, 0.8) url('../images/sertaneja.png') no-repeat center 50px;
     background-size: 60%;
 }
 main a.lr, main a.lr:hover{
