@@ -206,7 +206,7 @@ header .nav > li > .nav-content {
     display: none;
     visibility: hidden;
 
-    background: rgba(229, 231, 231, 0.6);
+    background: rgba(229, 231, 231, 0.2);
     backdrop-filter: blur(1rem);
     border-width: 0 1px 1px;
     border-style: solid;
