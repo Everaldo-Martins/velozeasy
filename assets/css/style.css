@@ -132,11 +132,11 @@ header .nav {
     display: flex;
 }
 
-header .nav>li {
+header .nav > li {
     float: left;
 }
 
-header .nav>li>span {
+header .nav > li > span {
     padding: 1.3rem 2rem 1.3rem .8rem;
     background: url('../images/seta.svg') no-repeat;
     background-position: 90% -220px;
@@ -144,13 +144,13 @@ header .nav>li>span {
     transition: all .3s ease;
 }
 
-header .nav>li>span.act {
+header .nav > li > span.act {
     background-color: rgba(4, 5, 6, 0.2);
     background-position: 90% -140px;
     color: #c9d4d9;
 }
 
-header .nav>li>.nav-content {
+header .nav > li > .nav-content {
     display: none;
     position: absolute;
     top: 3.7rem;
@@ -163,7 +163,7 @@ header .nav>li>.nav-content {
     z-index: 10;
 }
 
-header .nav>li>.show {
+header .nav > li > .show {
     display: flex;
 }
 
@@ -184,7 +184,7 @@ header .nav > li > span {
     transition: all .3s ease;
 }
 
-header .nav>li > .logo {
+header .nav > li > .logo {
     width: 10rem;
     background-repeat: no-repeat;
     background-position: 0 .4rem;
@@ -206,8 +206,8 @@ header .nav > li > .nav-content {
     display: none;
     visibility: hidden;
 
-    background: rgba(229, 231, 231, 0.8);
-    backdrop-filter: blur(0.4rem);
+    background: rgba(229, 231, 231, 0.6);
+    backdrop-filter: blur(1rem);
     border-width: 0 1px 1px;
     border-style: solid;
     border-color: rgba(68, 87, 95, 0.2);
@@ -233,8 +233,10 @@ header .nav .nav-column {
     padding: .5rem 2rem 1.5rem 2rem;
 }
 
-header .nav .nav-column li{
-    list-style: none;
+header .nav .nav-column li {
+    list-style: circle;
+    color: #5b5e5f;
+    margin: 0 -1.2rem 0 1.2rem;
 }
 
 header .nav .nav-column h3 {
@@ -243,7 +245,7 @@ header .nav .nav-column h3 {
     font-size: 1.2rem;
     line-height: 1.6rem;
     color: #5b5e5f;
-    padding: .6rem .4rem;
+    padding: .6rem 0;
 }
 
 header .nav .nav-column h3.orange {
@@ -255,18 +257,18 @@ header .nav .nav-column li a {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: .9rem;
-    padding: .5rem .8rem;
+    padding: .6rem .1rem;
     color: #5b5e5f;
     transition: linear .1s ease .1s;
 }
 
-header .nav .nav-column li a:hover {
-    text-decoration: none;
-    color: #4b4d4e;
+header .nav .nav-column li:hover {
+    list-style: disc;
+    color: #ff722b;
 }
 
-header .nav .nav-column li:hover {
-    list-style: circle;
+header .nav .nav-column li a:hover {
+    text-decoration: none;
 }
 
 header .nav .nav-column img {
@@ -424,7 +426,7 @@ main .menu-large a {
     background-color: rgb(228, 232, 235);
     height: 50px;
     border: 0.063rem solid rgb(171, 188, 196);
-    border-radius: .1rem .8rem .1rem .8rem;
+    border-radius: .8rem .1rem .8rem .1rem;
     transform: scale(100%);
     transition: transform .1s ease .2s;
 }
@@ -579,7 +581,7 @@ main .menu-large .c12 {
 
 main .radios {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(3, auto);
     grid-gap: 0.5rem;
     margin: 1.5rem 0;
 }
@@ -587,14 +589,11 @@ main .radios {
 main .radios .radio1,
 main .radios .radio2,
 main .radios .radio3 {
-    border-width: 0.1rem;
-    border-style: solid;
-    border-color: rgb(68, 87, 95);
-    border-radius: 1rem;
+    border-width: 0.1rem solid rgb(68, 87, 95);
+    border-radius: .8rem .1rem .8rem .1rem;
     height: 250px;
     padding: 0;
     margin: 0;
-    float: left;
     display: block;
     position: relative;
     overflow: hidden;
@@ -640,7 +639,7 @@ main .radios audio {
     position: absolute;
     bottom: 5px;
     left: 5px;
-    border-radius: 2rem;
+    border-radius: .8rem .1rem;
 }
 
 /* Footer */
