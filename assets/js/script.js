@@ -1,68 +1,85 @@
-var d = new Date, h = d.getHours(), 
-    hello = document.querySelector(".hello"),
-    search = document.getElementById("search"),    
-    menu_se = document.querySelectorAll(".menu_se ul li"),
-    sff = document.getElementById("sff"),
-    rpr = document.getElementById("rpr"),
-    sf = document.getElementById("sf"),
-    menu = document.querySelectorAll(".nav > li > span"),
-    ddw = document.querySelectorAll(".nav-content");
+document.addEventListener("DOMContentLoaded", () => {
+    const d = new Date();
+    const h = d.getHours();
+    const hello = document.querySelector(".hello");
+    const search = document.getElementById("search");
+    const menuSeItems = document.querySelectorAll(".menu_se ul li");
+    const sff = document.getElementById("sff");
+    const rpr = document.getElementById("rpr");
+    const sf = document.getElementById("sf");
+    const menuItems = document.querySelectorAll(".nav > li > span");
+    const dropdowns = document.querySelectorAll(".nav-content");
+    const facebookButton = document.querySelector(".facebook");
 
-function closed() {
-    menu.forEach((e, o) => {
-        ddw[o].classList.remove("show"), e.removeAttribute("class", "act");
-    })
-}
+    const closeMenus = () => {
+        menuItems.forEach((menuItem, index) => {
+            dropdowns[index].classList.remove("show");
+            menuItem.classList.remove("act");
+        });
+    };
 
-function opened(e, o) {
-    closed(), ddw[o].classList.add("show"), e.setAttribute("class", "act");
-}
+    const openMenu = (menuItem, index) => {
+        closeMenus();
+        dropdowns[index].classList.add("show");
+        menuItem.classList.add("act");
+    };
 
-menu.forEach((e, o) => {
-    e.onclick = () => {
-        ddw[o].classList.contains("show") ? closed() : opened(e, o);
-    }, ddw[o].onmouseleave = () => {
-        closed();
-    }, window.onclick = e => {
-        e.target.matches(".nav > li > span") || closed();
-    }
-});
+    menuItems.forEach((menuItem, index) => {
+        menuItem.addEventListener("click", () => {
+            dropdowns[index].classList.contains("show") ? closeMenus() : openMenu(menuItem, index);
+        });
 
-function km(){
-    menu_se.forEach((m) =>{
-        m.classList.remove("active");
+        dropdowns[index].addEventListener("mouseleave", closeMenus);
+
+        window.addEventListener("click", (e) => {
+            if (!e.target.matches(".nav > li > span")) {
+                closeMenus();
+            }
+        });
     });
-};
-menu_se.forEach((e, i) =>{    
-    e.onclick = () => {
-        km(),
-        e.classList.add("active");
-        switch (i) {
-            case 1: search.action = "https://www.google.com.br/images"; break;
-            case 2: search.action = "https://www.youtube.com/results"; break;
-            default: search.action = "https://www.google.com.br/search"; break;
-        }    
-    }
-}); 
 
-hello.innerHTML = h >= 0 && h < 12 ? "Olá, seja bem vindo(a)! Tenha um bom dia." : h >= 12 && h < 18 ? "Olá, seja bem vindo(a)! Tenha uma boa tarde." : "Olá, seja bem vindo(a)! Tenha uma boa noite.";
+    const removeActiveClassFromMenuItems = () => {
+        menuSeItems.forEach(menuItem => menuItem.classList.remove("active"));
+    };
 
-document.getElementById("copy").innerHTML = "2022 - " + d.getFullYear(); 
+    menuSeItems.forEach((menuItem, index) => {
+        menuItem.addEventListener("click", () => {
+            removeActiveClassFromMenuItems();
+            menuItem.classList.add("active");
 
-search.target = "_blank", search.autocomplete = "off";
+            switch (index) {
+                case 1:
+                    search.action = "https://www.google.com.br/images";
+                    break;
+                case 2:
+                    search.action = "https://www.youtube.com/results";
+                    break;
+                default:
+                    search.action = "https://www.google.com.br/search";
+                    break;
+            }
+        });
+    });
 
-search.onsubmit = () => {
-    setTimeout(() => {
-        search.reset();
-    }, "100")
-};
+    hello.textContent = h >= 0 && h < 12 ? "Olá, seja bem vindo(a)! Tenha um bom dia." :
+                        h >= 12 && h < 18 ? "Olá, seja bem vindo(a)! Tenha uma boa tarde." :
+                        "Olá, seja bem vindo(a)! Tenha uma boa noite.";
 
-window.onload = () => {
-    sff.src = "https://stm21.xcast.com.br:10044/musica", 
-    rpr.src = "http://cast2.youngtech.radio.br:8160/radio", 
+    document.getElementById("copy").textContent = `2022 - ${d.getFullYear()}`;
+
+    search.target = "_blank";
+
+    search.addEventListener("submit", () => {
+        setTimeout(() => {
+            search.reset();
+        }, 100);
+    });
+
+    sff.src = "https://stm21.xcast.com.br:10044/musica";
+    rpr.src = "http://cast2.youngtech.radio.br:8160/radio";
     sf.src = "https://stream.zeno.fm/qcwuy1y3tm0uv";
-};
 
-document.querySelector(".facebook").onclick = () => {
-    window.open("https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvelozeasy.blogspot.com/", "facebook", "status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=no, top=10, left=10, width=500, height=300");       
-};
+    facebookButton.addEventListener("click", () => {
+        window.open("https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvelozeasy.blogspot.com/", "facebook", "status=no, toolbar=no, location=no, directories=no, resisable=no, scrollbars=no, top=10, left=10, width=500, height=300");
+    });
+});
