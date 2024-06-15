@@ -49,6 +49,7 @@ body {
 main .menu-large a {
     background-image: url('../images/back_img.webp');
     background-repeat: no-repeat;
+    background-size: 700px 450px;
 }
 
 /* Navbar */
@@ -206,11 +207,11 @@ header .nav > li > .nav-content {
     display: none;
     visibility: hidden;
 
-    background: rgba(229, 231, 231, 0.2);
+    background: rgba(229 231 231 / 30%);
     backdrop-filter: blur(1rem);
     border-width: 0 1px 1px;
     border-style: solid;
-    border-color: rgba(68, 87, 95, 0.2);
+    border-color: rgba(68 87 95 / 60%);
     border-radius: 0 0 .5rem .5rem;
 
     transition: all .1s ease .2s;
