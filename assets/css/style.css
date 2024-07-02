@@ -204,17 +204,14 @@ header .nav > li > span.act {
 /* Menu Dropdown */
 header .nav > li > .nav-content {
     width: 100%;
-    display: none;
-    visibility: hidden;
+    height: 0;
 
     background: rgba(229 231 231 / 30%);
     backdrop-filter: blur(1rem);
     border-width: 0 1px 1px;
     border-style: solid;
     border-color: rgba(68 87 95 / 60%);
-    border-radius: 0 0 .5rem .5rem;
-
-    transition: all .1s ease .2s;
+    border-radius: 0 0 .5rem .5rem;    
 
     position: absolute;
     top: 3.7rem;
@@ -223,14 +220,17 @@ header .nav > li > .nav-content {
 }
 
 header .nav > li > .show {
-    visibility: visible;
+    height: auto;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    transition: all .4s linear .2s;
 }
 
 /* Menu Content Styles */
 header .nav .nav-column {
-    float: left;
-    width: calc(25% - 4rem);
+    flex: 4;
     padding: .5rem 2rem 1.5rem 2rem;
 }
 
@@ -420,7 +420,7 @@ main .sb:hover {
 main .menu-large {
     display: grid;
     grid-template-columns: repeat(12, auto);
-    gap: .7rem;
+    gap: .5rem .75rem;
 }
 
 main .menu-large a {
@@ -433,6 +433,7 @@ main .menu-large a {
 }
 
 main .menu-large a:hover {
+    border: .005rem solid rgb(168, 168, 168);
     transform: scale(120%);
 }
 
